@@ -98,3 +98,42 @@ function showMemories() {
 
 </body>
 </html>
+
+<script>
+let heartInterval = 500;
+
+function startHearts() {
+  setInterval(createHeart, heartInterval);
+}
+
+function musicBoost() {
+  heartInterval = 200; // hızlanır
+
+  for (let i = 0; i < 10; i++) {
+    createHeart(true);
+  }
+
+  setTimeout(() => {
+    heartInterval = 500; // normale döner
+  }, 7000);
+}
+
+function createHeart(boost = false) {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤";
+
+  const colors = boost
+    ? ["#ff2d55", "#ffffff"]
+    : ["rgba(255,0,100,0.7)", "rgba(255,255,255,0.8)"];
+
+  heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = boost ? "32px" : "24px";
+  heart.style.animationDuration = boost ? "4s" : "6s";
+
+  document.getElementById("hearts-container").appendChild(heart);
+
+  setTimeout(() => heart.remove(), 7000);
+}
+</script>
