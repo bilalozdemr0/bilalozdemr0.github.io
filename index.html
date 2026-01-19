@@ -5,9 +5,10 @@
   <title>Bir Sorum Var 💙</title>
   <link rel="stylesheet" href="style.css">
 </head>
-  <div id="hearts-container"></div>
 
 <body>
+
+<div id="hearts-container"></div>
 
 <!-- GİRİŞ -->
 <div id="intro">
@@ -24,92 +25,44 @@
 
 <!-- SİZ -->
 <div id="memories" style="display:none;">
-
   <div class="couple-gallery">
-  <img src="foto1.jpg">
-  <img src="foto2.jpg">
-
+    <img src="foto1.jpg">
+    <img src="foto2.jpg">
   </div>
 
   <a href="https://open.spotify.com/track/1yBuzU3MYbsMgmuQktNq8J"
-   target="_blank"
-   onclick="musicBoost()">
-   ▶️ Spotify'da Aç
-</a>
-
-    </a>
-  </div>
-
+     target="_blank"
+     onclick="musicBoost()">
+     ▶️ Spotify'da Aç
+  </a>
 </div>
 
 <script>
+let heartInterval = 500;
+let heartTimer;
+
 function showMemories() {
   document.getElementById("intro").style.display = "none";
   document.getElementById("memories").style.display = "block";
-}
-</script>
-<script>
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "❤";
-
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (4 + Math.random() * 3) + "s";
-
-  document.getElementById("hearts-container").appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 7000);
+  startHearts();
 }
 
 function startHearts() {
-  setInterval(createHeart, 500);
-  <script>
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "❤";
-
-  const colors = ["rgba(255, 0, 100, 0.7)", "rgba(255, 255, 255, 0.8)"];
-  heart.style.color = colors[Math.floor(Math.random() * colors.length)];
-
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (4 + Math.random() * 3) + "s";
-
-  document.getElementById("hearts-container").appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 7000);
-}
-</script>
-
-}
-
-
-</script>
-
-</body>
-</html>
-
-<script>
-let heartInterval = 500;
-
-function startHearts() {
-  setInterval(createHeart, heartInterval);
+  clearInterval(heartTimer);
+  heartTimer = setInterval(createHeart, heartInterval);
 }
 
 function musicBoost() {
-  heartInterval = 200; // hızlanır
+  heartInterval = 200;
+  startHearts();
 
   for (let i = 0; i < 10; i++) {
     createHeart(true);
   }
 
   setTimeout(() => {
-    heartInterval = 500; // normale döner
+    heartInterval = 500;
+    startHearts();
   }, 7000);
 }
 
@@ -132,3 +85,6 @@ function createHeart(boost = false) {
   setTimeout(() => heart.remove(), 7000);
 }
 </script>
+
+</body>
+</html>
