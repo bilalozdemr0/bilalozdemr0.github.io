@@ -4,12 +4,12 @@ body {
   text-align: center;
 }
 
-.gallery {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 30px;
+.gallery img {
+  width: 220px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+}
 }
 
 .gallery img {
