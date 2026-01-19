@@ -51,3 +51,21 @@ button:hover {
   background: #d81b60;
   transform: scale(1.05);
 }
+
+.spotify {
+  display: inline-block;
+  margin: 30px 0;
+  padding: 14px 32px;
+  background-color: #1DB954;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.spotify:hover {
+  background-color: #17a74a;
+  transform: scale(1.05);
+}
