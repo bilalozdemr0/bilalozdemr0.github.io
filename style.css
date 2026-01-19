@@ -1,8 +1,10 @@
 body {
-  background: #0f0f1a;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
   font-family: Arial, sans-serif;
   text-align: center;
 }
+
 
 .gallery {
   display: flex;
@@ -89,9 +91,3 @@ button:hover {
   display: block;
 }
 
-body {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
