@@ -65,6 +65,26 @@ function createHeart() {
 
 function startHearts() {
   setInterval(createHeart, 500);
+  <script>
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤";
+
+  const colors = ["rgba(255, 0, 100, 0.7)", "rgba(255, 255, 255, 0.8)"];
+  heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+
+  document.getElementById("hearts-container").appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 7000);
+}
+</script>
+
 }
 
 // mevcut fonksiyonunu GÜNCELLE
