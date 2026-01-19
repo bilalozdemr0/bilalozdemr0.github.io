@@ -2,46 +2,48 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Benimle çıkar mısın? ❤️</title>
+  <title>Bir Sorum Var 💙</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<audio id="muzik" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
+<!-- GİRİŞ -->
+<div id="intro">
+  <div class="gallery">
+    <img src="mcqueen.jpg" alt="Şimşek McQueen">
+    <img src="sally.jpg" alt="Sally">
+  </div>
 
-<button onclick="muzigiBaslat()">🎵 Müziği Başlat</button>
+  <h1>Bir şey sormak istiyorum…</h1>
+  <p>Benimle çıkar mısın? 💙</p>
 
+  <button onclick="showMemories()">Evet</button>
+</div>
 
-<div class="container">
-  <h1>Benimle sevgili olur musun? 💖</h1>
+<!-- SİZ -->
+<div id="memories" style="display:none;">
 
-  <a href="https://open.spotify.com/intl-tr/track/1yBuzU3MYbsMgmuQktNq8J?si=b256ae38a39d4a42" target="_blank" class="spotify">
-  🎵 Spotify'da Dinle
-</a>
-
-
-  <div class="photos">
+  <div class="gallery">
     <img src="foto1.jpg">
     <img src="foto2.jpg">
   </div>
-<div class="music">
-  <p>🎧 Bu şarkı eşliğinde bir soru sormak istiyorum…</p>
 
-  <iframe style="border-radius:12px"
-    src="https://open.spotify.com/embed/track/1yBuzU3MYbsMgmuQktNq8J"
-    width="100%"
-    height="152"
-    frameborder="0"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy">
-  </iframe>
+  <div class="music-link">
+    <p>🎧 Bu şarkıyı dinlerken</p>
+    <a href="https://open.spotify.com/track/1yBuzU3MYbsMgmuQktNq8J"
+       target="_blank">
+       ▶️ Şarkıyı Spotify’da Aç
+    </a>
+  </div>
+
 </div>
 
-  <button onclick="cevap()">Evet 💕</button>
-</div>
+<script>
+function showMemories() {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("memories").style.display = "block";
+}
+</script>
 
-<script src="script.js"></script>
 </body>
 </html>
