@@ -126,3 +126,21 @@ button:hover {
     opacity: 0;
   }
 }
+
+.spotify-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ff2d55, #ff6fa5);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(255, 45, 85, 0.4);
+  transition: all 0.3s ease;
+}
+
+.spotify-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 35px rgba(255, 45, 85, 0.6);
+}
